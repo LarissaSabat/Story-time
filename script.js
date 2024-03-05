@@ -1,18 +1,15 @@
-$(document).ready(function(){
-    let inicio=1;
-    $("#radio1").prop("checked", true);
+let inicio=1;
+document.getElementById("radio1").checked=true;
 
+setInterval(function(){
+    proxTrecho();
+}, 5000)
 
-    setInterval(function(){
-        nextStory();
-    },5000);
-
-    function nextStory(){
-        inicio++;
-        if (inicio >4) {
-            inicio=1;
-        }
-
-        $("#radio"+ inicio).prop("checked",true);
+function proxTrecho(){
+    inicio++;
+    if (inicio>4){
+        inicio=1;
     }
-})
+    
+    document.getElementById("radio"+inicio).checked=true;
+}
